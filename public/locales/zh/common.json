@@ -1,0 +1,14 @@
+{
+  "blog": "博客",
+  "projects": "项目",
+  "tag": "标签",
+  "about": "关于",
+  "title": "Suiko的自留地",
+  "bio": "一个普通的网络安全工程师。 在 <1>Github</1> , <3>Twitter</3> 或者 <5>Telegram</5> 上可以找到我。",
+  "minToRead": "{{min}} 分钟阅读",
+  "pageNotFound": "未找到页面",
+  "backToHome": "回到首页",
+  "allPostTags": "博客标签",
+  "tableOfContents": "文章目录",
+  "blogList": "博客列表"
+}

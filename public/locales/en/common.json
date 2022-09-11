@@ -1,0 +1,14 @@
+{
+  "blog": "BLOG",
+  "projects": "PROJECTS",
+  "tag": "TAG",
+  "about": "ABOUT",
+  "title": "Suiko's Palace",
+  "bio": "Just a regular cyber security engineer. Find me on <1>Github</1>, <3>Twitter</3> or <5>Telegram</5>.",
+  "minToRead": "{{min}} min(s) to Read",
+  "pageNotFound": "Page Not Found",
+  "backToHome": "Back To Home",
+  "allPostTags": "TAGS",
+  "tableOfContents": "Table Of Contents",
+  "blogList": "blog list"
+}
