@@ -23,12 +23,10 @@ const PostList: React.FC<PostListProps> = ({ posts }) => {
               whileHover={{
                 x: 10,
               }}
-              className={`grid md:h-56 gap-3 py-8 px-4 bg-base-100 transparent md:gap-6 md:grid-cols-4 border-t ${
-                index === posts.length - 1 ? "border-b" : ""
-              } border-base-content`}
+              className={`grid md:h-56 gap-3 py-8 px-4 bg-base-100 transparent md:gap-6 md:grid-cols-4`}
             >
               <header className="flex flex-col justify-center">
-                <h2 className="text-3xl uppercase leading-snug tracking-tighter font-bold  text-transparent bg-clip-text bg-gradient-to-b from-primary to-secondary col-span-2">
+                <h2 className="text-3xl uppercase leading-snug tracking-tighter font-bold col-span-2">
                   {post.frontmatter.title}
                 </h2>
                 <div className="space-x-2 py-2">

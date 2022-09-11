@@ -28,15 +28,13 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="from-primary to-secondary text-primary-content bg-gradient-to-br pt-8 pb-12 md:pb-0">
+    <header className="bg-primary text-primary-content pt-8 pb-12 md:pb-0">
       <Container>
         <div className="flex-col md:flex-row flex md:justify-between">
           <motion.div
             layout
             className={`flex p-4 top-0 left-0 w-full justify-between fixed shadow md:shadow-none md:p-0 md:static md:order-1 md:w-auto md:bg-transparent z-10 ${
-              isFixedNav
-                ? "bg-gradient-to-br from-primary to-secondary text-primary-content"
-                : "bg-transparent"
+              isFixedNav ? "bg-primary text-primary-content" : "bg-transparent"
             }`}
           >
             <Nav />

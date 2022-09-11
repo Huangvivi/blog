@@ -83,10 +83,10 @@ const Post: NextPage<{ post: PostType }> = ({ post }) => {
         <article>
           <header className="flex flex-col py-8 gap-6 items-center justify-center">
             <div className="flex gap-2 py-6 flex-col items-center">
-              <h1 className="text-5xl lg:[font-size:3rem] font-bold uppercase text-transparent bg-clip-text bg-gradient-to-b from-secondary to-primary">
+              <h1 className="text-5xl lg:[font-size:3rem] font-bold uppercase">
                 {post.frontmatter.title}
               </h1>
-              <span className="font-extrabold text-lg text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+              <span className="text-lg">
                 <time dateTime="post.frontmatter.date">
                   {dayjs(post.frontmatter.date)
                     .locale(i18n.language)

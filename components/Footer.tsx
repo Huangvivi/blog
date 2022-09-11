@@ -3,7 +3,7 @@ import { AUTHOR_NAME } from "../lib/constants";
 
 const Footer = () => {
   return (
-    <footer className="from-secondary to-primary text-secondary-content bg-gradient-to-br">
+    <footer className="bg-primary text-secondary-content">
       <Container>
         <div className="py-16 flex items-center text-xl font-extrabold justify-center">
           <span>
