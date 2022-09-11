@@ -25,10 +25,23 @@ ogImage: https://picsum.photos/500/300?random=1
 
 举个最佳实践：
 
-```docker
-RUN apt update -y
-RUN apt upgrade -y
-RUN apt install build-essential -y
+```python
+def hello()
+    a = 1
+    print("hello, world")
+
+```
+
+```shell
+cd aaaa
+```
+
+```bash
+cd aaaa
+```
+
+```sh
+cd aaaa
 ```
 
 应该替换成：

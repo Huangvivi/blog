@@ -4,7 +4,16 @@
     [
       "prismjs",
       {
-        "languages": ["javascript", "css", "docker", "markup"],
+        "languages": [
+          "javascript",
+          "css",
+          "docker",
+          "markup",
+          "py",
+          "shell",
+          "sh",
+          "bash"
+        ],
         "plugins": ["line-numbers"]
       }
     ]

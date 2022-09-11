@@ -6,6 +6,7 @@ import NoScrollLink from "~/components/NoScrollLink";
 import { PostType } from "~/lib/api";
 import "dayjs/locale/zh";
 import { useRouter } from "next/router";
+import { BookOpenIcon } from "@heroicons/react/outline";
 
 type PostListProps = {
   posts: PostType[];
@@ -15,7 +16,7 @@ const PostList: React.FC<PostListProps> = ({ posts }) => {
   const { t, i18n } = useTranslation();
   const router = useRouter();
   return (
-    <>
+    <div className="max-w-5xl m-auto">
       {posts?.map((post, index) => (
         <NoScrollLink key={post.route} href={`/blog/${post.route}`} passHref>
           <motion.a className="inline-block bg-gradient-to-b from-primary to-secondary">
@@ -25,10 +26,37 @@ const PostList: React.FC<PostListProps> = ({ posts }) => {
               }}
               className={`grid md:h-56 gap-3 py-8 px-4 bg-base-100 transparent md:gap-6 md:grid-cols-4`}
             >
-              <header className="flex flex-col justify-center">
+              <header
+                className={`flex flex-col gap-1 justify-center ${
+                  post.frontmatter.coverImage
+                    ? "md:col-span-3"
+                    : "md:col-span-4"
+                }`}
+              >
                 <h2 className="text-3xl uppercase leading-snug tracking-tighter font-bold col-span-2">
                   {post.frontmatter.title}
                 </h2>
+                <div className="flex items-center gap-3">
+                  <time
+                    className="font-light text-gray-600 dark:text-slate-300"
+                    dateTime={post.frontmatter.date}
+                  >
+                    {dayjs(post.frontmatter.date)
+                      .locale(i18n.language)
+                      .format("MMM DD, YYYY")}
+                  </time>
+                  <div className="flex gap-1 items-center justify-center">
+                    <span className="w-4 h-4">
+                      <BookOpenIcon />
+                    </span>
+                    <span className="font-light text-gray-600 dark:text-slate-300">
+                      {t("minToRead", { min: post.timeToRead.minutes })}
+                    </span>
+                  </div>
+                </div>
+                <div className={`md:flex md:items-center`}>
+                  <p className="line-clamp-1">{post.frontmatter.excerpt}</p>
+                </div>
                 <div className="space-x-2 py-2">
                   {post.frontmatter.tags.map((tag) => (
                     <motion.button
@@ -40,37 +68,13 @@ const PostList: React.FC<PostListProps> = ({ posts }) => {
                           scroll: false,
                         });
                       }}
-                      className="link-hover"
+                      className="link-hover link-primary"
                     >
                       #{tag}
                     </motion.button>
                   ))}
                 </div>
               </header>
-
-              <div className="flex justify-between items-center gap-1 md:order-1 md:flex-col md:justify-center md:items-end">
-                <time
-                  className="font-extrabold text-gray-600 dark:text-slate-300 text-lg"
-                  dateTime={post.frontmatter.date}
-                >
-                  {dayjs(post.frontmatter.date)
-                    .locale(i18n.language)
-                    .format("MMM DD, YYYY")}
-                </time>
-                <span className="font-light text-gray-600 dark:text-slate-300">
-                  {t("minToRead", { min: post.timeToRead.minutes })}
-                </span>
-              </div>
-              <div
-                className={`md:flex md:items-center text-gray-800 dark:text-slate-400 ${
-                  post.frontmatter.coverImage
-                    ? "md:col-span-1"
-                    : "md:col-span-2"
-                }`}
-              >
-                <p className="line-clamp-3">{post.frontmatter.excerpt}</p>
-              </div>
-
               {post.frontmatter.coverImage && (
                 <picture className="max-h-72 overflow-hidden rounded-lg">
                   <img
@@ -84,7 +88,7 @@ const PostList: React.FC<PostListProps> = ({ posts }) => {
           </motion.a>
         </NoScrollLink>
       ))}
-    </>
+    </div>
   );
 };
 
