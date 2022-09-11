@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  TELEGRAM_SOCIAL_URL,
-  GITHUB_SOCIAL_URL,
-  TWITTER_SOCIAL_URL,
-} from "~/lib/constants";
+import { GITHUB_SOCIAL_URL, EMAIL_URL } from "~/lib/constants";
 import { motion } from "framer-motion";
 import Container from "~/components/Container";
 import { SearchIcon, GlobeAltIcon } from "@heroicons/react/outline";
@@ -90,24 +86,20 @@ const Header = () => {
             className="flex items-center mt-12 md:mt-0"
           >
             <motion.span className="text-4xl text-center md:text-left md:text-6xl font-bold tracking-tighter leading-tight">
-              <LocaleLink href="/">{t("title")}</LocaleLink>
+              <LocaleLink href="/blog">{t("title")}</LocaleLink>
             </motion.span>
           </motion.div>
         </div>
 
         <p className="mt-3 text-xl md:mb-9">
           <Trans ns="common" i18nKey={"bio"}>
-            Just a regular cyber security engineer. Find me on
+            Just a regular cyber security engineer. contact me on
             <SocialLink href={GITHUB_SOCIAL_URL} key={1}>
               Github
             </SocialLink>
-            ,
-            <SocialLink href={TWITTER_SOCIAL_URL} key={2}>
-              Twitter
-            </SocialLink>
             or
-            <SocialLink href={TELEGRAM_SOCIAL_URL} key={3}>
-              Telegram
+            <SocialLink href={EMAIL_URL} key={2}>
+              EMAIL
             </SocialLink>
             .
           </Trans>

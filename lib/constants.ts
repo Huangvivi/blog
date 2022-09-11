@@ -1,9 +1,8 @@
-export const GITHUB_SOCIAL_URL = "https://github.com/suikodev";
-export const TWITTER_SOCIAL_URL = "https://twitter.com/suikodev";
-export const TELEGRAM_SOCIAL_URL = "https://t.me/suikodev";
-export const AUTHOR_NAME = "Suiko";
+export const GITHUB_SOCIAL_URL = "https://github.com/huangvivi";
+export const EMAIL_URL = "mailto:vivihuang876600@gmail.com";
+export const AUTHOR_NAME = "vivi";
 export const TWIKOO_URL = "https://comments.vivivivi.dev";
-export const SITE_URL = "https://suiko.dev";
+export const SITE_URL = "https://vivivivi.dev";
 export const NAV = [
   {
     label: "blog",
